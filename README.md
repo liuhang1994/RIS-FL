@@ -28,10 +28,10 @@ To be completed soon:
 | Parameter Name  | Meaning| Default Value| Type/Range |
 | ---------- | -----------|-----------|-----------|
 | M   | total number of devices   |40   |int   |
-| N   | total number of devices   |40   |int   |
-| L   | total number of devices   |40   |int   |
-| nit   | total number of devices   |40   |int   |
-| Jmax   | total number of devices   |40   |int   |
+| N   | total number of receive antennas   |40   |int   |
+| L   | total number of RIS elements   |40   |int   |
+| nit   | maximum number of iterations for Algorithm 1 (SCA-based algorithm for f and theta), I_max   |40   |int   |
+| Jmax   | number of sampling iterations for Gibbs sampling   |40   |int   |
 | threshold   | total number of devices   |40   |int   |
 | tau   | total number of devices   |40   |int   |
 | trial   | total number of devices   |40   |int   |
@@ -52,8 +52,9 @@ To be completed soon:
     * __initial()__:
     
 * __optlib.py__:
-* __flow.py__:
-* __Nets.py__:
+* __flow.py__: 
+* __Nets.py__: 
+    * __CNNMnist()__: Specify the convolutional neural network structure used for learning
 * __AirComp.py__:
 * __train_script.py__:
 * __Monte_Carlo_Averaging.py__:
