@@ -49,7 +49,7 @@ To be completed soon:
 ## Documentations (Please also see each file for further documentation):
 
 * __main.py__:
-    * __A_GEN.m__:
+    * __initial()__:
     
 * __optlib.py__:
 * __flow.py__:
