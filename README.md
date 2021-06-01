@@ -1,14 +1,69 @@
 # RIS-FL
 
-To be completed soon.
+This is the simulation code package for the following paper:
+
+Hang Liu, Xiaojun Yuan, and Ying-Jun Angela Zhang. "Reconfigurable intelligent surface enabled federated learning: A unified communication-learning design approach," to appear at *IEEE Transactions on Wireless Communications*, 2020. [[ArXiv Version](https://arxiv.org/abs/2011.10282)]
+
+The package, written on Python 3, reproduces the numerical results of the proposed algorithm in the above paper.
 
 
-Dependencies:
+## Abstract of Article:
 
-Python >= 3.5
+> To exploit massive amounts of data generated at mobile edge networks, federated learning (FL) has been proposed as an attractive substitute for centralized machine learning (ML). By collaboratively training a shared learning model at edge devices, FL avoids direct data transmission and thus overcomes high communication latency and privacy issues as compared to centralized ML. To improve the communication efficiency in FL model aggregation, over-the-air computation has been introduced to support a large number of simultaneous local model uploading by exploiting the inherent superposition property of wireless channels. However, due to the heterogeneity of communication capacities among edge devices, over-the-air FL suffers from the straggler issue in which the device with the weakest channel acts as a bottleneck of the model aggregation performance. This issue can be alleviated by device selection to some extent, but the latter still suffers from a tradeoff between data exploitation and model communication. In this paper, we leverage the reconfigurable intelligent surface (RIS) technology to relieve the straggler issue in over-the-air FL. Specifically, we develop a learning analysis framework to quantitatively characterize the impact of device selection and model aggregation error on the convergence of over-the-air FL. Then, we formulate a unified communication-learning optimization problem to jointly optimize device selection, over-the-air transceiver design, and RIS configuration. Numerical experiments show that the proposed design achieves substantial learning accuracy improvement compared with the state-of-the-art approaches, especially when channel conditions vary dramatically across edge devices.
 
-torch
+ 
+## Dependencies
+This package is written on Python 3. It requires the following libraries:
+* Python >= 3.5
+* torch
+* torchvision
+* scipy
+* CUDA (if GPU is used)
 
-torchvision
+## How to Use
+The main file is **main.py**. It can take the following user-input parameters by a parser (also see the function **initial()** in main.py):
 
-scipy
+To be completed soon:
+
+| Parameter Name  | Meaning| Default Value| Type/Range |
+| ---------- | -----------|-----------|-----------|
+| M   | total number of devices   |40   |int   |
+| N   | total number of devices   |40   |int   |
+| L   | total number of devices   |40   |int   |
+| nit   | total number of devices   |40   |int   |
+| Jmax   | total number of devices   |40   |int   |
+| threshold   | total number of devices   |40   |int   |
+| tau   | total number of devices   |40   |int   |
+| trial   | total number of devices   |40   |int   |
+| SNR   | total number of devices   |40   |int   |
+| verbose   | total number of devices   |40   |int   |
+| set   | total number of devices   |40   |int   |
+| seed   | total number of devices   |40   |int   |
+|  gpu  | total number of devices   |40   |int   |
+| local_ep   | total number of devices   |40   |int   |
+| local_bs   | total number of devices   |40   |int   |
+| lr   | total number of devices   |40   |int   |
+| momentum   | total number of devices   |40   |int   |
+| epochs   | total number of devices   |40   |int   |
+
+## Documentations (Please also see each file for further documentation):
+
+* __main.py__:
+    * __A_GEN.m__:
+    
+* __optlib.py__:
+* __flow.py__:
+* __Nets.py__:
+* __AirComp.py__:
+* __train_script.py__:
+* __Monte_Carlo_Averaging.py__:
+* __data/__: Store the Fashion-MNIST dataset. When one uses the codes at the first time, it will automatically download the dataset from the Interenet.
+* __store/__: Store the learning outputs as npz files
+  
+
+
+## Referencing
+
+If you in any way use this code for research that results in publications, please cite our original article listed above.
+
+
