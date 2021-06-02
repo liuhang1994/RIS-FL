@@ -49,16 +49,26 @@ Here is an example for executing the scripts in Linux terminal is
 
 ## Documentations (Please also see each file for further documentation):
 
-* __main.py__:
-    * __initial()__:
+* __main.py__: Main script for initializing the system model, optimizing the variables, training the learning model, and storing the result to Store/ as a npz file
+    * __initial()__: Initialize the parser function to read the user-input parameters
     
 * __optlib.py__:
+    * __Gibbs()__: Optimize __x__,  __f__, and __theta__ via Algorithm 2 by the following two functions
+    * __find_obj_inner()__: Given __x__, compute the objective value by executing sca_fmincon()
+    * __sca_fmincon()__: Given the device selection decision __x__, optimize __f__ and __theta__ via Algorithm 1
 * __flow.py__: 
+    * __learning_flow()__: Read the optimization result, initial the learning model, and perform training and testing on top of Learning_iter()
+    * __Learning_iter()__: Given learning model, compute the graidents, update the training models, and perform testing on top of train_script.py
+    * __FedAvg_grad()__: Given the aggregated global gradient and the current model, update the global model by eq.(4)
 * __Nets.py__: 
     * __CNNMnist()__: Specify the convolutional neural network structure used for learning
 * __AirComp.py__:
+    * __transmission()__: Given the local gradients, perform over-the-air model aggregation; see Section II-C 
 * __train_script.py__:
-* __Monte_Carlo_Averaging.py__:
+    * __Load_FMNIST_IID()__: Download (if needed) and load the Fashion-MNIST data, and distribute them to the local devices
+    * __local_update()__: Given a learning model and the distributed training data, compute the local gradients/model changes
+    * __test_model()__: Given a learning model, test the accuracy/loss based on certain test images
+* __Monte_Carlo_Averaging.py__: Load the npz file from store, and average the Monte Carlo trials
 * __data/__: Store the Fashion-MNIST dataset. When one uses the codes at the first time, it will automatically download the dataset from the Interenet.
 * __store/__: Store the learning outputs as npz files
   
