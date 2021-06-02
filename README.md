@@ -23,37 +23,35 @@ This package is written on Python 3. It requires the following libraries:
 ## How to Use
 The main file is **main.py**. It can take the following user-input parameters by a parser (also see the function **initial()** in main.py):
 
-To be completed soon:
-
 | Parameter Name  | Meaning| Default Value| Type/Range |
 | ---------- | -----------|-----------|-----------|
 | M   | total number of devices   |40   |int   |
 | N   | total number of receive antennas   |5   |int   |
 | L   | total number of RIS elements   |40   |int   |
 | nit   | maximum number of iterations for Algorithm 1, I_max   |100   |int   |
-| Jmax   | number of sampling iterations for Gibbs sampling   |50   |int   |
-| threshold   | threshold epsilon for the early stopping criteria of Algorithm 1   |1e-2   |float   |
+| Jmax   | number of iterations for Gibbs sampling   |50   |int   |
+| threshold   | threshold value for the early stopping in Algorithm 1   |1e-2   |float   |
 | tau   | SCA regularization term for Algorithm 1   |1   |float   |
 | trial   | total number of Monte Carlo trials   |50   |int   |
-| SNR   | signal-to-noise ratio, P_0/sigma^2_n  |90.0   |float   |
-| verbose   | Output no/importatnt/detailed messages   |0   |0,1,2   |
+| SNR   | signal-to-noise ratio, P_0/sigma^2_n in dB  |90.0   |float   |
+| verbose   | Output no/importatnt/detailed messages in running the scripts   |0   |0,1,2   |
 | set   | Which simulation setting (1 or 2) to use; see Section V-A   |2   |1,2   |
 | seed   | random seed   |1   |int   |
 |  gpu  | GPU index used for learning (if possible)   |1   |int   |
-| momentum   | SGD momentum, only used for multiple local updates   |0.9   |int   |
+| momentum   | SGD momentum, only used for multiple local updates   |0.9   |float   |
 | epochs   | number of training rounds T   |500   |int   |
 
-Here is an example for executing the scripts in Linux terminal is
+Here is an example for executing the scripts in a Linux terminal:
 > python -u main.py --gpu=0 --trial=50 --set=2
 
 
-## Documentations (Please also see each file for further documentation):
+## Documentations (Please also see each file for more details):
 
-* __main.py__: Main script for initializing the system model, optimizing the variables, training the learning model, and storing the result to Store/ as a npz file
+* __main.py__: Initialize the simulation system, optimizing the variables, training the learning model, and storing the result to Store/ as a npz file
     * __initial()__: Initialize the parser function to read the user-input parameters
     
 * __optlib.py__:
-    * __Gibbs()__: Optimize __x__,  __f__, and __theta__ via Algorithm 2 by the following two functions
+    * __Gibbs()__: Optimize __x__,  __f__, and __theta__ via Algorithm 2 on top of the following two functions
     * __find_obj_inner()__: Given __x__, compute the objective value by executing sca_fmincon()
     * __sca_fmincon()__: Given the device selection decision __x__, optimize __f__ and __theta__ via Algorithm 1
 * __flow.py__: 
@@ -69,8 +67,8 @@ Here is an example for executing the scripts in Linux terminal is
     * __local_update()__: Given a learning model and the distributed training data, compute the local gradients/model changes
     * __test_model()__: Given a learning model, test the accuracy/loss based on certain test images
 * __Monte_Carlo_Averaging.py__: Load the npz file from store, and average the Monte Carlo trials
-* __data/__: Store the Fashion-MNIST dataset. When one uses the codes at the first time, it will automatically download the dataset from the Interenet.
-* __store/__: Store the learning outputs as npz files
+* __data/__: Store the Fashion-MNIST dataset. When running at the first time, it automatically downloads the dataset from the Interenet.
+* __store/__: Store output files (\*.npz)
   
 
 
