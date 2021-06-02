@@ -28,23 +28,24 @@ To be completed soon:
 | Parameter Name  | Meaning| Default Value| Type/Range |
 | ---------- | -----------|-----------|-----------|
 | M   | total number of devices   |40   |int   |
-| N   | total number of receive antennas   |40   |int   |
+| N   | total number of receive antennas   |5   |int   |
 | L   | total number of RIS elements   |40   |int   |
-| nit   | maximum number of iterations for Algorithm 1 (SCA-based algorithm for f and theta), I_max   |40   |int   |
-| Jmax   | number of sampling iterations for Gibbs sampling   |40   |int   |
-| threshold   | total number of devices   |40   |int   |
-| tau   | total number of devices   |40   |int   |
-| trial   | total number of devices   |40   |int   |
-| SNR   | total number of devices   |40   |int   |
-| verbose   | total number of devices   |40   |int   |
-| set   | total number of devices   |40   |int   |
-| seed   | total number of devices   |40   |int   |
-|  gpu  | total number of devices   |40   |int   |
-| local_ep   | total number of devices   |40   |int   |
-| local_bs   | total number of devices   |40   |int   |
-| lr   | total number of devices   |40   |int   |
-| momentum   | total number of devices   |40   |int   |
-| epochs   | total number of devices   |40   |int   |
+| nit   | maximum number of iterations for Algorithm 1, I_max   |100   |int   |
+| Jmax   | number of sampling iterations for Gibbs sampling   |50   |int   |
+| threshold   | threshold epsilon for the early stopping criteria of Algorithm 1   |1e-2   |float   |
+| tau   | SCA regularization term for Algorithm 1   |1   |float   |
+| trial   | total number of Monte Carlo trials   |50   |int   |
+| SNR   | signal-to-noise ratio, P_0/sigma^2_n  |90.0   |float   |
+| verbose   | Output no/importatnt/detailed messages   |0   |0,1,2   |
+| set   | Which simulation setting (1 or 2) to use; see Section V-A   |2   |1,2   |
+| seed   | random seed   |1   |int   |
+|  gpu  | GPU index used for learning (if possible)   |1   |int   |
+| momentum   | SGD momentum, only used for multiple local updates   |0.9   |int   |
+| epochs   | number of training rounds T   |500   |int   |
+
+Here is an example for executing the scripts in Linux terminal is
+> python -u main.py --gpu=0 --trial=50 --set=2
+
 
 ## Documentations (Please also see each file for further documentation):
 
