@@ -190,13 +190,7 @@ if __name__ == '__main__':
             theta_store=0
         
  
-        
-        
-        
-        if Proposed:
-            print('Final Result of the Proposed Algorithm:{:.6f} Our algorithm w/o Device Selection (Algorithm 1):{:.6f}'.format(
-                    obj_new[libopt.Jmax],
-                    obj_new[0]))
+
 
         # dictionary used to store the optimization result to pass to the learning script
         dic={}
