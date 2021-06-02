@@ -2,8 +2,8 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-#import matplotlib
-# matplotlib.use('Qt5Agg')
+import matplotlib
+matplotlib.use('Qt5Agg')
 import copy
 
 def pl(result,num1,num2):
@@ -31,9 +31,9 @@ def pl(result,num1,num2):
     a=np.zeros([5,len1])
     a[0,:]=result['accuracy_test']
     a[1,:]=result['accuracy_test1']
-    a[2,:]=result['accuracy_test3']
-    a[3,:]=result['accuracy_test2']
-    a[4,:]=result['accuracy_test5']
+#    a[2,:]=result['accuracy_test3']
+#    a[3,:]=result['accuracy_test2']
+#    a[4,:]=result['accuracy_test5']
     return a
 
 
@@ -47,11 +47,11 @@ if __name__ == '__main__':
     Noiseless=np.zeros([len(M_set),5])
     Proposed=np.zeros([len(M_set),5])
 
-    trial=1
+    trial=5
     SNR=90.0
     for m in range(len(M_set)):
         mm=M_set[m]
-        filename='./store/trial_{}_M_{}_N_{}_L_{}_\
+        filename='./store/result_trial_{}_M_{}_N_{}_L_{}_\
 SNR_{}_Tau_{}_set_{}.npz'.format(trial,
                 40,5,mm,SNR,1,2)
         a=np.load(filename,allow_pickle=1)
