@@ -34,8 +34,8 @@ The main file is **main.py**. It can take the following user-input parameters by
 | tau   | SCA regularization term for Algorithm 1   |1   |float   |
 | trial   | total number of Monte Carlo trials   |50   |int   |
 | SNR   | signal-to-noise ratio, P_0/sigma^2_n in dB  |90.0   |float   |
-| verbose   | Output no/importatnt/detailed messages in running the scripts   |0   |0,1,2   |
-| set   | Which simulation setting (1 or 2) to use; see Section V-A   |2   |1,2   |
+| verbose   | output no/importatnt/detailed messages in running the scripts   |0   |0,1,2   |
+| set   | which simulation setting (1 or 2) to use; see Section V-A   |2   |1,2   |
 | seed   | random seed   |1   |int   |
 |  gpu  | GPU index used for learning (if possible)   |1   |int   |
 | momentum   | SGD momentum, only used for multiple local updates   |0.9   |float   |
