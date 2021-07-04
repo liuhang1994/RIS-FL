@@ -46,6 +46,8 @@ Here is an example for executing the scripts in a Linux terminal:
 
 
 ## Documentations (Please also see each file for more details):
+# **Gonna UPDATE this part soon**
+
 
 * __main.py__: Initialize the simulation system, optimizing the variables, training the learning model, and storing the result to Store/ as a npz file
     * __initial()__: Initialize the parser function to read the user-input parameters
