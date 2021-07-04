@@ -1,0 +1,72 @@
+WARN: A->p (column pointers) not strictly increasing, column 861 empty
+WARN: A->p (column pointers) not strictly increasing, column 903 empty
+WARN: A->p (column pointers) not strictly increasing, column 945 empty
+WARN: A->p (column pointers) not strictly increasing, column 987 empty
+WARN: A->p (column pointers) not strictly increasing, column 1029 empty
+WARN: A->p (column pointers) not strictly increasing, column 1071 empty
+WARN: A->p (column pointers) not strictly increasing, column 1113 empty
+WARN: A->p (column pointers) not strictly increasing, column 1155 empty
+WARN: A->p (column pointers) not strictly increasing, column 1197 empty
+WARN: A->p (column pointers) not strictly increasing, column 1239 empty
+WARN: A->p (column pointers) not strictly increasing, column 1281 empty
+WARN: A->p (column pointers) not strictly increasing, column 1323 empty
+WARN: A->p (column pointers) not strictly increasing, column 1365 empty
+WARN: A->p (column pointers) not strictly increasing, column 1407 empty
+WARN: A->p (column pointers) not strictly increasing, column 1449 empty
+WARN: A->p (column pointers) not strictly increasing, column 1491 empty
+WARN: A->p (column pointers) not strictly increasing, column 1533 empty
+WARN: A->p (column pointers) not strictly increasing, column 1575 empty
+WARN: A->p (column pointers) not strictly increasing, column 1617 empty
+WARN: A->p (column pointers) not strictly increasing, column 1659 empty
+WARN: A->p (column pointers) not strictly increasing, column 1701 empty
+WARN: A->p (column pointers) not strictly increasing, column 1743 empty
+WARN: A->p (column pointers) not strictly increasing, column 1785 empty
+WARN: A->p (column pointers) not strictly increasing, column 1827 empty
+WARN: A->p (column pointers) not strictly increasing, column 1869 empty
+WARN: A->p (column pointers) not strictly increasing, column 1911 empty
+WARN: A->p (column pointers) not strictly increasing, column 1953 empty
+WARN: A->p (column pointers) not strictly increasing, column 1995 empty
+WARN: A->p (column pointers) not strictly increasing, column 2037 empty
+WARN: A->p (column pointers) not strictly increasing, column 2079 empty
+WARN: A->p (column pointers) not strictly increasing, column 2121 empty
+WARN: A->p (column pointers) not strictly increasing, column 2163 empty
+WARN: A->p (column pointers) not strictly increasing, column 2205 empty
+WARN: A->p (column pointers) not strictly increasing, column 2247 empty
+WARN: A->p (column pointers) not strictly increasing, column 2289 empty
+WARN: A->p (column pointers) not strictly increasing, column 2331 empty
+WARN: A->p (column pointers) not strictly increasing, column 2373 empty
+WARN: A->p (column pointers) not strictly increasing, column 2415 empty
+WARN: A->p (column pointers) not strictly increasing, column 2457 empty
+WARN: A->p (column pointers) not strictly increasing, column 2499 empty
+WARN: A->p (column pointers) not strictly increasing, column 2541 empty
+----------------------------------------------------------------------------
+	SCS v2.1.2 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8008242
+eps = 1.00e-04, alpha = 1.50, max_iters = 200, normalize = 1, scale = 0.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2542, constraints m = 70723
+Cones:	primal zero / dual free vars: 80
+	linear vars: 67240
+	sd vars: 3403, sd blks: 1
+Setup time: 7.39e+00s
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 9.96e-01  9.89e-01  5.57e-01 -1.21e+00  4.71e-02  1.61e+00  1.26e-01 
+   100| 3.25e+11  6.41e+02  1.00e+00 -2.57e+11  9.96e+09  2.17e+00  4.84e+00 
+   200| 1.28e+10  1.25e+03  1.00e+00 -5.00e+11  1.94e+10  1.77e+00  9.43e+00 
+----------------------------------------------------------------------------
+Status: Unbounded/Inaccurate
+Hit max_iters, solution may be inaccurate, returning best found solution.
+Timing: Solve time: 9.43e+00s
+	Lin-sys: nnz in L factor: 11081357, avg solve time: 3.72e-02s
+	Cones: avg projection time: 1.31e-03s
+	Acceleration: avg step time: 5.13e-03s
+----------------------------------------------------------------------------
+Certificate of dual infeasibility:
+dist(s, K) = 5.0282e-05
+|Ax + s|_2 * |c|_2 = 5.9769e+02
+c'x = -1.0000
+============================================================================
