@@ -11,10 +11,13 @@ import torch
 #from torch import nn
 #from Nets import MLP,CNNCifar,CNNMnist
 import flow
-import DC_DS
+
 import MIMO
 from optlib import Gibbs
-import DC_RIS
+
+#bachmark scripts, dependent on cvxpy
+#import DC_DS
+#import DC_RIS
 
 def initial():
     libopt = argparse.ArgumentParser()
@@ -153,7 +156,7 @@ if __name__ == '__main__':
             theta_store=0
         
  
-        NoDS=1
+        NoDS=0
         if NoDS:
             start = time.time()
             print('Running DC algorithm for RIS optimiazation')
@@ -166,7 +169,7 @@ if __name__ == '__main__':
             F_DC_RIS=np.zeros([libopt.M,1])
             theta_DC_RIS=np.zeros([libopt.L,1])
         
-        NoRIS=1
+        NoRIS=0
         if NoRIS:
             start = time.time()
 #        [x_store_NORIS,obj_new_NORIS,f_store_NORIS,theta_store_NORIS]=Gibbs(
@@ -183,7 +186,7 @@ if __name__ == '__main__':
             f_store_NORIS=np.zeros([libopt.N,])
         
         
-        SVD=1
+        SVD=0
         if SVD:
             print('Running Differential Geometry Algorithm for Beamforming')
             obj_SVD,f_SVD=MIMO.SVD_MIMO(libopt,h_d,libopt.verbose)
