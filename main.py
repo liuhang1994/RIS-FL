@@ -25,7 +25,7 @@ def initial():
     
     # optimization parameters
     libopt.add_argument('--nit', type=int, default=100, help='I_max,# of maximum SCA loops')                   
-    libopt.add_argument('--Jmax', type=int, default=0, help='# of maximum Gibbs Outer loops')
+    libopt.add_argument('--Jmax', type=int, default=50, help='# of maximum Gibbs Outer loops')
     libopt.add_argument('--threshold', type=float, default=1e-2, help='epsilon,SCA early stopping criteria')
     libopt.add_argument('--tau', type=float, default=1, help=r'\tau, the SCA regularization term')  
     
@@ -135,7 +135,7 @@ if __name__ == '__main__':
         x=x0
         
         
-        Noiseless=0
+        Noiseless=1
         Proposed=1
         if Proposed:
             start = time.time()
@@ -151,9 +151,9 @@ if __name__ == '__main__':
             obj_new=0
             f_store=0
             theta_store=0
-        print(obj_new)
+        
  
-        NoDS=0
+        NoDS=1
         if NoDS:
             start = time.time()
             print('Running DC algorithm for RIS optimiazation')
@@ -166,7 +166,7 @@ if __name__ == '__main__':
             F_DC_RIS=np.zeros([libopt.M,1])
             theta_DC_RIS=np.zeros([libopt.L,1])
         
-        NoRIS=0
+        NoRIS=1
         if NoRIS:
             start = time.time()
 #        [x_store_NORIS,obj_new_NORIS,f_store_NORIS,theta_store_NORIS]=Gibbs(
@@ -183,7 +183,7 @@ if __name__ == '__main__':
             f_store_NORIS=np.zeros([libopt.N,])
         
         
-        SVD=0
+        SVD=1
         if SVD:
             print('Running Differential Geometry Algorithm for Beamforming')
             obj_SVD,f_SVD=MIMO.SVD_MIMO(libopt,h_d,libopt.verbose)
@@ -193,10 +193,10 @@ if __name__ == '__main__':
             f_SVD=np.zeros([libopt.N,])
         
         
-#        if Proposed:
-#            print('Algorithm2:{:.6f} Algorithm1:{:.6f} NoRIS:{:.6f} NoDS:{:.6f} DG:{:.6f}'.format(
-#                    obj_new[libopt.Jmax],
-#                    obj_new[0],obj_new_NORIS[0],obj_DC_RIS,obj_SVD))
+        if Proposed:
+            print('Algorithm2:{:.6f} Algorithm1:{:.6f} NoRIS:{:.6f} NoDS:{:.6f} DG:{:.6f}'.format(
+                    obj_new[libopt.Jmax],
+                    obj_new[0],obj_new_NORIS[0],obj_DC_RIS,obj_SVD))
 
 
         dic={}
