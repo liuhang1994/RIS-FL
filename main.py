@@ -165,7 +165,7 @@ if __name__ == '__main__':
             end = time.time()
             print("Running time: {} seconds".format(end - start))
         else:
-            obj_DC_RIS=np.array([0])
+            obj_DC_RIS=0
             F_DC_RIS=np.zeros([libopt.M,1])
             theta_DC_RIS=np.zeros([libopt.L,1])
         
